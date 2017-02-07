@@ -6,17 +6,24 @@ class CardComponent extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      isToggleOn: true
+    }
   }
 
   handleClick(){
-    console.log('Handle Click function');
+    this.setState({
+      isToggleOn: !this.state.isToggleOn
+    });
+
   }
 
   render() {
     return (
         <div className="card" onClick={this.handleClick}>
           <div className="card-block">
-            <p className="card-text">{this.props.cards[0].explanation}</p>
+            <p className="card-text" id="explanation">{this.state.isToggleOn ? this.card.explanation : this.card.topic}</p>
+            <p className="card-text" id="topic" hidden></p>
           </div>
         </div>
     )
