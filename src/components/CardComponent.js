@@ -7,7 +7,7 @@ class CardComponent extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      isToggleOn: true
+      isToggleOn: false
     }
   }
 
@@ -22,8 +22,7 @@ class CardComponent extends React.Component {
     return (
         <div className="card" onClick={this.handleClick}>
           <div className="card-block">
-            <p className="card-text" id="explanation">{this.state.isToggleOn ? this.card.explanation : this.card.topic}</p>
-            <p className="card-text" id="topic" hidden></p>
+            <p className="card-text" >{this.state.isToggleOn ? this.props.explanation : this.props.topic}</p>
           </div>
         </div>
     )

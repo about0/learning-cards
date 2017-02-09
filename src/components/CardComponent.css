@@ -2,5 +2,6 @@
     cursor: pointer;
     min-width:200px;
     max-width: 600px;
-    border: rgba(166,5,27,0.85);
+    height: 100px;
+    text-align: center;
 }

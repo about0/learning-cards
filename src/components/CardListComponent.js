@@ -3,29 +3,29 @@ import Card from './CardComponent';
 
 
 function CardList(props) {
-  const cards = props.cards;
-  const cardItems = cards.map(card => {
-      {card.explanation}
+  const CARDS = [
+    {
+      id: 1,
+      topic: ";",
+      explanation: "separates javascript statements. added at the end of each executable statement. makes it possible to write many statements on one line."
+    },
+    {id: 2, topic: "javascript elements are executed in what order", explanation: "in the sequence they are written"},
+    {id: 3, topic: "groups of javascript statements", explanation: "blocks"},
+  ];
+  const cardItems = [];
+  CARDS.forEach(card => {
+    cardItems.push(
+      <Card
+        topic={card.topic}
+        explanation={card.explanation}
+        key={card.id}
+      />)
+
   });
-console.log(cardItems);
+
   return(
     <ul>{cardItems}</ul>
   )
 }
-
-
-// class CardListComponent extends React.Component {
-//
-//   render() {
-//     const cardItems = this.props.cards.forEach(card => {
-//
-//     });
-//     return (
-//       this.props.cards.forEach(card => {
-//         <Card topic={card.topic} explanation={card.explanation}/>
-//       })
-//     )
-//   }
-// }
 
 export default CardList;
