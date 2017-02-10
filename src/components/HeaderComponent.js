@@ -10,6 +10,7 @@ class HeaderComponent extends React.Component {
       <nav className="navbar navbar-inverse">
         <Link to="/cards">All cards list</Link>
         <Link to="/about">About current project</Link>
+        <Link to="/swiper">Card Swiper</Link>
       </nav>
     )
   }

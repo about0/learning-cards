@@ -1,5 +1,17 @@
 import React from 'react';
-import './CardComponent.css';
+
+const cardStyle = {
+  padding: "10px",
+  margin: "10px",
+  cursor: "pointer",
+  minWidth: "200px",
+  maxWidth: "600px",
+  height: "100px",
+  textAlign: "center",
+  border: "1px solid lightblue",
+  backgroundColor: "#fffce0"
+
+};
 
 class CardComponent extends React.Component {
   constructor(props) {
@@ -20,9 +32,10 @@ class CardComponent extends React.Component {
 
   render() {
     return (
-        <div className="card" onClick={this.handleClick}>
+        <div  onClick={this.handleClick} style={cardStyle}>
           <div className="card-block">
             <p className="card-text" >{this.state.isToggleOn ? this.props.explanation : this.props.topic}</p>
+            {this.props.children}
           </div>
         </div>
     )
