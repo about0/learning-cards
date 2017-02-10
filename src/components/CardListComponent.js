@@ -4,7 +4,7 @@ import CARDS from '../data/data.json';
 
 function CardList(props) {
   const listStyle = {
-    backgroundColor: "red"
+    backgroundColor: "#77D9C4"
   };
   const cardItems = [];
   CARDS.forEach(card => {

@@ -9,6 +9,7 @@ import Swiper from './components/CardSwipe';
 
 export default (
   <Route path="/" components={App}>
+    <IndexRoute component={Swiper}/>
     <Route path="cards" component={CardList}/>
     <Route path="card" component={Card}/>
     <Route path="about" components={HomePage}/>

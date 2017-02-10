@@ -6,9 +6,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import routes from './routes';
 import {Router, browserHistory} from 'react-router';
 
-const listStyle = {
-  backgroundColor: "green"
-};
 
 ReactDOM.render(
   <Router history={browserHistory} routes={routes} />,

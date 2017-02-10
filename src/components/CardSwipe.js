@@ -1,29 +1,30 @@
 import React from 'react'
-import Slider from 'react-slick';
-import CardList from './CardListComponent';
 import Card from './CardComponent';
+import Carousel from 'nuka-carousel';
+import './cardSwipe.css';
 
-class CardSwipe extends React.Component {
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+import CARDS from '../data/data.json';
 
-    return (
-      <div className="container">
-        <Slider {...settings}>
-          <Card>1</Card>
-          <Card>2</Card>
-          <Card>3</Card>
-          <Card>4</Card>
-        </Slider>
-      </div>
+function CardSwipe(props) {
+  const carouselStyles = {
+    contentAlign: 'center'
+  };
+  const cardItems = [];
+  CARDS.forEach(card => {
+    cardItems.push(
+      <Card
+        topic={card.topic}
+        explanation={card.explanation}
+        key={card.id}
+      />
     )
-  }
+  });
+
+  return (
+    <Carousel style={carouselStyles}>
+      {cardItems}
+    </Carousel>
+  )
 }
 
 export default CardSwipe;
